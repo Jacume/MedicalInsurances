@@ -1,0 +1,227 @@
+/**
+ * @file navbar.css
+ * @author John A Cruz Merced
+ * @date 2025-05-26
+ * @email cruzmercedjohn@gmail.com
+ * @copyright Copyright (c) 2025
+ */
+
+.navbar-view {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: var(--theme_color);
+    border-bottom: var(--border);
+    z-index: 50;
+
+    a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        padding: 0 1rem;
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    a {
+        font-size: 1rem;
+    }
+
+    a:active {
+        color: lightgray;
+    }
+
+    a:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.navbar-view a {
+    display: block;
+    padding: 0.75rem 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.navbar-main {
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* desktop nav hidden by default (mobile-first) */
+.navbar-desktop {
+    display: none;
+    gap: 1rem;
+}
+
+.navbar-burger {
+    appearance: none;
+    border: 0;
+    background: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.navbar-burger-bar {
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin: 5px 0;
+    background: currentColor;
+    transition: transform 200ms ease;
+}
+
+.navbar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+    z-index: 90;
+}
+
+.navbar-overlay_open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.navbar-drawer {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(80vw, 320px);
+    transform: translateX(-100%);
+    transition: transform 200ms ease;
+    background: #fff;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 100;
+}
+
+.navbar-drawer_open {
+    transform: translateX(0);
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* ≥ large: show desktop nav, hide burger & drawer */
+html.large {
+    .navbar-desktop {
+        display: flex;
+    }
+
+    .navbar-burger,
+    .navbar-drawer,
+    .navbar_overlay {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar-drawer,
+    .navbar_overlay,
+    .navbar-burger-bar {
+        transition: none;
+    }
+}
+
+/*
+.navbar-view {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  height: 4rem;
+  display: flex;
+  background-color: var(--theme_color);
+  justify-content: space-between;
+}
+
+.navbar-main {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar-list {
+  height: 100%;
+  display: flex;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.navbar-item {
+  list-style-type: none;
+  height: 100%;
+}
+
+.navbar-main,
+.navbar-link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: var(--white);
+}
+.navbar-link {
+  font-size: 1rem;
+}
+.navbar-link:active {
+  color: lightgray;
+}
+
+.navbar-link:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-shadow {
+  margin: 0 0 1.5rem 0;
+  overflow: visible;
+  height: 0.1rem;
+  position: relative;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.1) 0,
+    rgba(0, 0, 0, 0) 75%
+  );
+}
+
+.navbar-shadow::before {
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  top: -0.1rem;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.1) 0,
+    rgba(0, 0, 0, 0) 75%
+  );
+  content: '';
+}
+
+.navbar-shadow::after {
+  height: 0.5rem;
+  width: 100%;
+  position: absolute;
+  top: 0.1rem;
+  height: 0.5rem;
+  background: #fff;
+  content: '';
+  box-sizing: content-box;
+} */

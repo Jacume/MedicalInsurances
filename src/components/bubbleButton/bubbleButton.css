@@ -1,0 +1,65 @@
+/**
+ * @file bubbleButton.css
+ * @author John A Cruz Merced
+ * @date 2025-07-13
+ * @email cruzmercedjohn@gmail.com
+ * @copyright Copyright (c) 2025
+ */
+.bubbleButton-view {
+  width: fit-content;
+  display: grid;
+  column-gap: 0.5rem;
+  row-gap: 0.1rem;
+  align-items: center;
+  padding: 0.1rem;
+}
+
+.bubbleButton-view_twoCols {
+  grid-template-columns: auto 1fr;
+}
+
+.bubbleButton-view_twoRows {
+  grid-template-rows: auto 1fr;
+  .bubbleButton-button {
+    grid-row: 1 / -1;
+  }
+}
+
+.bubbleButton-button,
+.bubbleButton-label {
+  cursor: pointer;
+}
+
+.bubbleButton-description {
+  font-size: 0.7rem;
+  color: var(--dark_gray);
+  align-self: flex-start;
+}
+
+.bubbleButton-button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  box-shadow: var(--bubble_shadow);
+}
+/* Colors */
+
+.bubbleButton-button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--bubble_shadow-hover);
+}
+
+.bubbleButton-button:active {
+  transform: scale(0.97);
+  box-shadow: var(--bubble_shadow-active);
+}
+
+.bubbleButton-button_background_theme {
+  background-image: linear-gradient(145deg, var(--theme_color-darker), var(--theme_color));
+}
+
+.bubbleButton-svg_white {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--white);
+}

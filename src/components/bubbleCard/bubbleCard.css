@@ -1,0 +1,35 @@
+/**
+ * @file bubbleCard.css
+ * @author John A Cruz Merced
+ * @date 2025-07-15
+ * @email cruzmercedjohn@gmail.com
+ * @copyright Copyright (c) 2025
+ */
+
+.bubbleCard-view {
+  width: fit-content;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.bubbleCard-bubble {
+  aspect-ratio: 1 / 1;
+  background: var(--theme_color-lightest);
+  border-radius: 35% / 30%; /* smooth blob */
+  box-shadow: var(--bubble_shadow);
+  display: flex;
+}
+
+.bubbleCard-bubble_medium {
+  padding: 3rem;
+}
+
+.bubbleCard-svg_medium {
+  width: 10rem;
+  height: 10rem;
+}
+.bubbleCard-description {
+  font-size: 0.7rem;
+  color: var(--dark_gray);
+}

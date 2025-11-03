@@ -1,0 +1,132 @@
+/**
+ * @file index.css
+ * @author John A Cruz Merced
+ * @date 2025-05-26
+ * @email cruzmercedjohn@gmail.com
+ * @copyright Copyright (c) 2025
+ */
+
+:root {
+  font-size: 100%;
+}
+
+* {
+  margin: 0;
+  /* transition: all ease-in-out 200ms; */
+}
+
+:root {
+  /* Colors */
+  --white: rgb(255, 255, 255);
+  --theme_color: rgb(0, 128, 100);
+  --theme_color-lightest: rgb(216, 232, 220);
+  --theme_color-light: rgb(0, 182, 142);
+  --theme_color-darker: rgb(0, 89, 70);
+  --gray: rgb(128, 128, 128);
+  --dark_gray: rgb(59, 59, 59);
+  /* End Colors */
+  /* Shadows */
+  --shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3);
+  --shadow-active: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  /* Bubble */
+  --bubble_shadow_southeast: inset -0.4rem -0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+  --bubble_shadow_northwest: inset 0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
+  --bubble_shadow: var(--bubble_shadow_northwest), var(--bubble_shadow_southeast), var(--shadow);
+  --bubble_shadow-hover: var(--bubble_shadow_northwest-hover), var(--bubble_shadow_southeast-hover), var(--shadow-hover);
+  --bubble_shadow_northwest-hover: inset 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.3);
+  --bubble_shadow_southeast-hover: inset -0.3rem -0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+  --bubble_shadow-active: var(--bubble_shadow_northwest-active), var(--bubble_shadow_southeast-active), var(--shadow-active);
+  --bubble_shadow_northwest-active: inset 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  --bubble_shadow_southeast-active: inset -0.2rem -0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+  /* End Bubble */
+  /* End Shadow */
+  /* Breakpoints */
+  --bp-small: 480px;
+  --bp-medium: 768px;
+  --bp-large: 1024px;
+  --bp-larger: 1280px;
+  /* EndS Breakpoints */
+  /* Borders */
+  --border: 0.1rem solid var(--gray);
+}
+
+@font-face {
+  font-family: theme_font;
+  src: url('./assets/fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: theme_font;
+  src: url('./assets/fonts/OpenSans-Regular.ttf');
+  font-weight: bold;
+}
+
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
