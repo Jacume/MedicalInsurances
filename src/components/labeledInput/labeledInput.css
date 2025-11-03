@@ -1,0 +1,16 @@
+/**
+ * @file labeledInput.css
+ * @author John A Cruz Merced
+ * @date 2025-11-03
+ * @email cruzmercedjohn@gmail.com
+ * @copyright Copyright (c) 2025
+ */
+
+ .labeledInput-view {
+	display: flex;
+	flex-direction: column;
+ }
+
+ .labeledInput-label{
+	padding: .5rem .5rem .1rem ;
+ }

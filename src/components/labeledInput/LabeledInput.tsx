@@ -7,6 +7,7 @@
  */
 
 import { HTMLInputTypeAttribute } from 'react';
+import './labeledInput.css';
 
 function LabeledInput({
 	size = 'medium',
@@ -23,16 +24,14 @@ function LabeledInput({
 }) {
 
 	return (
-		<>
-			<label htmlFor='' className={`labelInput-view_${size}`}>
-				{label}
-				<input
-					type={type}
-					className={`labelInput-input_${size}`}
-					value={children}
-				/>
-			</label>
-		</>
+		<label className={`labeledInput-view labeledInput-view_${size} labeledInput-view_${color}`}>
+			<span className={`labeledInput-label labeledInput-label_${size} labeledInput-label_${color}`}>{label}</span>
+			<input
+				type={type}
+				className={`labeledInput-input labeledInput-input_${size} labeledInput-input_${color}`}
+				value={children}
+			/>
+		</label>
 	);
 }
 

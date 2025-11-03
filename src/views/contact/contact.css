@@ -1,0 +1,16 @@
+/**
+ * @file contact.css
+ * @author John A Cruz Merced
+ * @date 2025-11-03
+ * @email cruzmercedjohn@gmail.com
+ * @copyright Copyright (c) 2025
+ */
+
+ .contact-view {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	>* {
+		max-width: 50%;
+	}
+ }
