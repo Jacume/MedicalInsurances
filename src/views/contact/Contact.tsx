@@ -6,13 +6,12 @@
  * @copyright Copyright (c) 2025
  */
 
-import LabeledInput from '../../components/labeledInput/labeledInput.tsx';
+import LabeledInput from '../../components/labeledInput/LabeledInput.tsx';
 
 function Contact() {
-
 	return (
 		<>
-			<LabeledInput label='Nombre'>asdf</LabeledInput>
+			<LabeledInput label='Nombre'></LabeledInput>
 			<LabeledInput label='Segundo Nombre'></LabeledInput>
 			<LabeledInput label='Apellido'></LabeledInput>
 			<LabeledInput label='Segundo Apellido'></LabeledInput>
