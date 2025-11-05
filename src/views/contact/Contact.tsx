@@ -6,30 +6,33 @@
  * @copyright Copyright (c) 2025
  */
 
-import { useState, type FormEventHandler } from 'react';
+import { type FormEventHandler } from 'react';
 import LabeledInput from '../../components/labeledInput/LabeledInput.tsx';
 import './contact.css';
+import { assert, uuidv4 } from '../../utilities/helpers/utils.ts';
 
 function Contact() {
-	const [firstName, setFirstName] = useState('');
-	const [secondName, setSecondName] = useState('');
-	const [firstLastName, setLastFirstName] = useState('');
-	const [secondLastName, setSecondLastName] = useState('');
-	const [phoneNumber, setPhoneNumber] = useState('');
-	const [email, setEmail] = useState('');
+	const firstName = uuidv4();
+	const secondName = uuidv4();
+	const firstLastName = uuidv4();
+	const secondLastName = uuidv4();
+	const phoneNumber = uuidv4();
+	const email = uuidv4();
 
 	const onSubmit: FormEventHandler = (e) => {
 		e.preventDefault();
-		console.log(':', firstName, secondName, firstLastName, secondLastName, phoneNumber, email);
+		assert(e.target instanceof HTMLFormElement, 'target is not a <form>');
+		const formData = new FormData(e.target);
+		console.log('firstName: ', formData.get(firstName));
 	};
 	return (
 		<form className={`contact-view`} onSubmit={onSubmit}>
-			<LabeledInput label='Nombre' onChange={(e) => {setFirstName(e.target.nodeValue ?? '')}}>{firstName}</LabeledInput>
-			<LabeledInput label='Segundo Nombre' onChange={(e) =>{setSecondName(e.target.nodeValue ?? '');}}>{secondName}</LabeledInput>
-			<LabeledInput label='Apellido' onChange={(e) =>{setLastFirstName(e.target.nodeValue ?? '');}}>{firstLastName}</LabeledInput>
-			<LabeledInput label='Segundo Apellido' onChange={(e) => {setSecondLastName(e.target.nodeValue ?? '');}}>{secondLastName}</LabeledInput>
-			<LabeledInput label='Número de Teléfono' type='tel' onChange={(e) => {setPhoneNumber(e.target.nodeValue ?? '');}}>{phoneNumber}</LabeledInput>
-			<LabeledInput label='Email' onChange={(e) => {setEmail(e.target.nodeValue ?? '');}}>{email}</LabeledInput>
+			<LabeledInput label='Nombre' name={firstName}></LabeledInput>
+			<LabeledInput label='Segundo Nombre' name={secondName}></LabeledInput>
+			<LabeledInput label='Apellido' name={firstLastName}></LabeledInput>
+			<LabeledInput label='Segundo Apellido' name={secondLastName}></LabeledInput>
+			<LabeledInput label='Número de Teléfono' type='tel' name={phoneNumber}></LabeledInput>
+			<LabeledInput label='Email' name={email}></LabeledInput>
 			<button type='submit'>Someter</button>
 		</form>
 	);

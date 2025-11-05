@@ -7,7 +7,7 @@
  */
 
 /** Asserts a condition is true, otherwise throws an error with the given message. */
-function assert(condition: any, message: string): asserts condition {
+export function assert(condition: boolean, message: string): asserts condition {
   if (!condition) {
     throw new Error(`Assertion failed: ${message}`);
   }

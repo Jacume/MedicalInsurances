@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2025
  */
 
-import { HTMLInputTypeAttribute, type ChangeEventHandler} from 'react';
+import { HTMLInputTypeAttribute, type ChangeEventHandler, type InputHTMLAttributes} from 'react';
 import './labeledInput.css';
 
 function LabeledInput({
@@ -15,13 +15,15 @@ function LabeledInput({
 	label,
 	type = 'text',
 	children,
-	onChange
+	onChange,
+	name
 }: {
 	size?: string;
 	color?: string;
 	label?: string;
 	type?: HTMLInputTypeAttribute;
 	children?: string;
+	name?: InputHTMLAttributes<HTMLInputTypeAttribute>['name'];
 	onChange?: ChangeEventHandler
 }) {
 	return (
@@ -32,6 +34,7 @@ function LabeledInput({
 				className={`labeledInput-input labeledInput-input_${size} labeledInput-input_${color}`}
 				value={children}
 				onChange={onChange}
+				name={name}
 			/>
 		</label>
 	);
